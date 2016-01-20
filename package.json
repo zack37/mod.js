@@ -1,0 +1,39 @@
+{
+  "name": "mod.js",
+  "version": "0.0.1",
+  "description": "Utility function to require all files at the same directory level as the index.js and export it as an object keyed by the filename.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "esw --quiet",
+    "ci": "npm run lint && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zack37/mod.js.git"
+  },
+  "keywords": [
+    "load",
+    "import",
+    "require",
+    "key",
+    "mod"
+  ],
+  "author": "Zack Smith <zack.t.smith37@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zack37/mod.js/issues"
+  },
+  "homepage": "https://github.com/zack37/mod.js#readme",
+  "dependencies": {
+    "bluebird": "^3.1.1",
+    "lodash": "^4.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "eslint": "^1.10.3",
+    "eslint-watch": "^2.1.4",
+    "mocha": "^2.3.4"
+  }
+}
