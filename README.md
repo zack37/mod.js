@@ -43,7 +43,7 @@ export default load(__dirname);
 And then it's as easy as
 ```js
 // root index.js
-var schemas = require('./schema');
+var schemas = require('./schemas');
 // {
 //    person: { ... },
 //    house: { ... }
