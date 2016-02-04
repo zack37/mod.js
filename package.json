@@ -8,7 +8,8 @@
     "build": "babel mod.js -o index.js",
     "test": "_mocha test/**/*.tests.js --compilers js:babel-register",
     "lint": "esw --quiet",
-    "ci": "npm run lint && npm test"
+    "ci": "npm run lint && npm test",
+    "prepublish": "npm run ci && npm run build"
   },
   "repository": {
     "type": "git",
