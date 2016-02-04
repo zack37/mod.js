@@ -2,3 +2,5 @@ test/
 .editorconfig
 .eslint*
 .travis.yml
+mod.js
+.babelrc
