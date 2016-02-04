@@ -14,18 +14,32 @@ describe('mod.js', function() {
 
   describe('load', function() {
 
+    var directory;
+
+    beforeEach(function() {
+      directory = load(__dirname + '/loadTest');
+    });
+
     it('should load all file but index from loadTest/ into an object', function() {
-      var directory = load(__dirname + '/loadTest');
       expect(directory).to.have.property('one');
       expect(directory).to.have.property('two');
+    });
+
+    it('should load files with dots in the name excluding extension', function() {
+      expect(directory).to.have.property('one.two');
     });
 
   });
 
   describe('loadAsync', function() {
 
+    var directory;
+
+    beforeEach(function() {
+      directory = loadAsync(__dirname + '/loadTest');
+    });
+
     it('should load all file but index from loadTest/ into an object asynchronously', function() {
-      var directory = loadAsync(__dirname + '/loadTest');
       return Promise.all([
         expect(directory).to.eventually.have.property('one'),
         expect(directory).to.eventually.have.property('two')

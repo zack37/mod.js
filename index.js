@@ -1,19 +1,15 @@
 'use strict';
 
-var fs = require('fs');
-var _ = require('lodash');
 var Promise = require('bluebird');
-
-function endsWith(string, pattern) {
-  return new RegExp(pattern + '$').test(string);
-}
+var fs = Promise.promisifyAll(require('fs'));
+var _ = require('lodash');
 
 function jsOrJson(file) {
- return endsWith(file, '.js') || endsWith(file, '.json');
+ return _.endsWith(file, '.js') || _.endsWith(file, '.json');
 }
 
 function getFileName(file) {
-  return _.head(file.split('.'));
+  return _.initial(file.split('.')).join('.');
 }
 
 function addPropertyFrom(dir){
@@ -37,14 +33,10 @@ var load = function(dir) {
 };
 
 var loadAsync = function(dir) {
-  return new Promise(function(resolve, reject) {
-    fs.readdir(dir, function(err, files) {
-      if(err) {
-        return reject(err);
-      }
-      return resolve(requireFiles(dir, files));
-    });
-  });
+    return fs.readdirAsync(dir)
+      .then(function(files) {
+        return requireFiles(dir, files);
+      });
 };
 
 module.exports = load;
