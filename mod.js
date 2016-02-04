@@ -17,7 +17,7 @@ function addPropertyFrom(dir){
 function requireFiles(dir, files) {
   return _.chain(files)
     .without('index.js')
-    .filter(file => file.endsWith('.js') || file.endsWith('.json')) // Only grab js and json files
+    .filter(file => _.endsWith(file, '.js') || _.endsWith(file, '.json')) // Only grab js and json files
     .map(file => _.initial(file.split('.')).join('.')) // Grab all but the extension of the file name
     .reduce(addPropertyFrom(dir), {}) // Build object of modules keyed by filename
     .value();
