@@ -6,7 +6,7 @@ node_js:
 - '4.2'
 script:
 - npm run ci
-deply:
+deploy:
   provider: npm
   email: "zack.t.smith37@gmail.com"
   on:
