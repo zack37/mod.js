@@ -1,5 +1,3 @@
-'use strict';
-
 import { promisify } from 'bluebird';
 import _ from 'lodash';
 import { readdir, readdirSync } from 'fs';
@@ -23,7 +21,7 @@ function requireFiles(dir, files) {
     .value();
 }
 
-let load = dir => requireFiles(dir, readdirSync(dir));
+const load = dir => requireFiles(dir, readdirSync(dir));
 
 load.loadAsync = dir => readdirAsync(dir).then(files => requireFiles(dir, files));
 

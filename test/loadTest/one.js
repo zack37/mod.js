@@ -1,1 +1,3 @@
-module.exports = {};
+module.exports = {
+  name: 'one.js'
+};

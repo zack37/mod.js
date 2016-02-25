@@ -8,9 +8,22 @@
   },
   "rules":{
     "block-scoped-var": 2,
+    "camelcase": 2,
+    "complexity": [2, 3],
+    "dot-location": [2, "property"],
+    "eol-last": 2,
+    "eqeqeq": [2, "smart"],
+    "indent": [2, 2],
+    "no-case-declarations": 2,
+    "no-else-return": 2,
+    "no-underscore-dangle": 2,
+    "no-unused-vars": 2,
     "no-use-before-define": 2,
     "space-in-parens": [2, "never"],
     "object-curly-spacing": [2, "always"],
-    "quotes": [2, "single", "avoid-escape"]
+    "quotes": [2, "single", "avoid-escape"],
+    "semi": 2,
+    "strict": [2, "global"],
+    "vars-on-top": 2
   }
 }
