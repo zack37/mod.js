@@ -4,17 +4,7 @@ import load, { loadAsync } from '../mod';
 
 describe('mod.js', () => {
 
-  it('should be able to require load as a function (babel 6 sanity check)', () => {
-    const loadFromRequire = require('../');
-    expect(loadFromRequire).to.be.a('function');
-  });
-
-  it('should be able to require loadAsync as a function (babel 6 sanity check)', () => {
-    const loadAsyncFromRequire = require('../').loadAsync;
-    expect(loadAsyncFromRequire).to.be.a('function');
-  });
-
-  describe('load', () => {
+  describe('#load', () => {
 
     let directory;
 
@@ -46,7 +36,7 @@ describe('mod.js', () => {
 
   });
 
-  describe('loadAsync', () => {
+  describe('#loadAsync', () => {
 
     let directory;
 
