@@ -7,7 +7,6 @@ const readdirAsync = promisify(readdir);
 function addPropertyFrom(dir) {
   return (acc, cur) => {
     let propName = cur.split('.').map(_.camelCase).join('.');
-    // const propName = _(cur).split('.').map(_.camelCase).join('.');
     acc[propName] = require(`${dir}/${cur}`);
     return acc;
   };
