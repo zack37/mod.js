@@ -19,16 +19,16 @@ describe('mod.js', () => {
     let directory;
 
     before(() => {
-      directory = load(__dirname + '/loadTest');
+      directory = load(__dirname + '/testFiles');
     });
 
-    it('should load all normal files but index from loadTest/ into an object', () => {
+    it('should load all normal files but index from testFiles/ into an object', () => {
       expect(directory).to.have.property('one').that.is.eql({ name: 'one.js' });
       expect(directory).to.have.property('two').that.is.eql({ name: 'two.js' });
       expect(directory).to.not.have.property('index');
     });
 
-    it('should load json files from loadTest/ into an object', () => {
+    it('should load json files from testFiles/ into an object', () => {
       expect(directory).to.have.property('test').that.is.eql({ name: 'test.json' });
     });
 
@@ -51,17 +51,17 @@ describe('mod.js', () => {
     let directory;
 
     before(() =>  {
-      return loadAsync(__dirname + '/loadTest')
+      return loadAsync(__dirname + '/testFiles')
         .then(files => directory = files);
     });
 
-    it('should load all normal named files but index from loadTest/ into an object asynchronously', () => {
+    it('should load all normal named files but index from testFiles/ into an object asynchronously', () => {
       expect(directory).to.have.property('one').that.is.eql({ name: 'one.js' });
       expect(directory).to.have.property('two').that.is.eql({ name: 'two.js' });
       expect(directory).to.not.have.property('index');
     });
 
-    it('should load json files from loadTest/ into an object asynchronously', () => {
+    it('should load json files from testFiles/ into an object asynchronously', () => {
       expect(directory).to.have.property('test').that.is.eql({ name: 'test.json' });
     });
 
