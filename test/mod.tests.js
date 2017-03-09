@@ -62,19 +62,19 @@ describe('mod.js', () => {
     });
 
     it('should load json files from loadTest/ into an object asynchronously', () => {
-      return expect(directory).to.have.property('test').that.is.eql({ name: 'test.json' });
+      expect(directory).to.have.property('test').that.is.eql({ name: 'test.json' });
     });
 
     it('should load files with dots in the name excluding extension asynchronously', () => {
-      return expect(directory).to.have.property('one.two').that.is.eql({ name: 'one.two.js' });
+      expect(directory).to.have.property('one.two').that.is.eql({ name: 'one.two.js' });
     });
 
     it('should load files with snake_casing as camelCasing asynchronously', () => {
-      return expect(directory).to.have.property('snakeCase').that.is.eql({ name: 'snake_case.js' });
+      expect(directory).to.have.property('snakeCase').that.is.eql({ name: 'snake_case.js' });
     });
 
     it('should load files with snake_casing and dots as camelCasing with dots asynchronously', () => {
-      return expect(directory).to.have.property('snakeCase.other').that.is.eql({ name: 'snake_case.other.js' });
+      expect(directory).to.have.property('snakeCase.other').that.is.eql({ name: 'snake_case.other.js' });
     });
 
   });
